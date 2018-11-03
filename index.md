@@ -1,3 +1,14 @@
+# Bike Sharing Data
+
+### Which start and stop stations are the most popular?
+
+### What is the average distance traveled? 
+
+### How many riders include bike sharing as a regular part of their commute?
+
+
+
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Davidg5/Davidg5.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
