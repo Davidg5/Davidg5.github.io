@@ -5,6 +5,8 @@
 |----|----|----|
 | 1 | 3069 | 3005 |
 
+![startstations](https://user-images.githubusercontent.com/36459447/47973206-3468a680-e071-11e8-85d4-f548e5fd4825.PNG)
+
 ### What is the average distance traveled? 
 
 ### How many riders include bike sharing as a regular part of their commute?
