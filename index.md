@@ -1,7 +1,7 @@
 # Bike Sharing Data
 
 
-### Most popular Start and Stop Stations:
+### Top Start and Stop Stations:
 
 ![startstations](https://user-images.githubusercontent.com/36459447/47973206-3468a680-e071-11e8-85d4-f548e5fd4825.PNG)
 ![endstations](https://user-images.githubusercontent.com/36459447/47974378-5d8c3580-e077-11e8-9794-5d97d1c00695.PNG)
@@ -12,6 +12,7 @@
 
 ### Breakdown of passholder types:
 
+![passholdertype](https://user-images.githubusercontent.com/36459447/47974723-e8b9fb00-e078-11e8-9fbd-74b61cf4b7a4.PNG)
 
 ## Welcome to GitHub Pages
 
