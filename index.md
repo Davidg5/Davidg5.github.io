@@ -7,9 +7,14 @@
 ![endstations](https://user-images.githubusercontent.com/36459447/47974378-5d8c3580-e077-11e8-9794-5d97d1c00695.PNG)
 
 ### What is the average distance traveled? 
-
+1.18 kilometers
 ### How many riders include bike sharing as a regular part of their commute?
-
+170 riders
+```markdown
+unique riders per day estimate = (# monthly pass trips + # flex pass trips + # staff annual trips)/(# days * typical # of trips)
+                               = (81304 monthly + 9517 flex + 382 staff) / (268 days * 2 trips)
+                               = 170 unique riders / day
+```
 ### Breakdown of passholder types:
 
 ![passholdertype](https://user-images.githubusercontent.com/36459447/47974723-e8b9fb00-e078-11e8-9fbd-74b61cf4b7a4.PNG)
