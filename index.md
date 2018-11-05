@@ -1,9 +1,7 @@
 # Bike Sharing Data
 
-### Which start and stop stations are the most popular?
-| Rank | Start Station ID / Frequency | End Station ID / Frequency |
-|----|----|----|
-| 1 | 3069 | 3005 |
+
+### Most popular Start and Stop Stations:
 
 ![startstations](https://user-images.githubusercontent.com/36459447/47973206-3468a680-e071-11e8-85d4-f548e5fd4825.PNG)
 
@@ -11,7 +9,7 @@
 
 ### How many riders include bike sharing as a regular part of their commute?
 
-
+### Breakdown of passholder types:
 
 
 ## Welcome to GitHub Pages
