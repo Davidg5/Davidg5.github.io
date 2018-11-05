@@ -1,6 +1,9 @@
 # Bike Sharing Data
 
 ### Which start and stop stations are the most popular?
+| Rank | Start Station ID / Frequency | End Station ID / Frequency |
+|----|----|----|
+| 1 | 3069 | 3005 |
 
 ### What is the average distance traveled? 
 
