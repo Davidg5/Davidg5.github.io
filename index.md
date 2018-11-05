@@ -12,7 +12,7 @@
 170 riders
 ```markdown
 unique riders per day estimate = (# monthly pass trips + # flex pass trips + # staff annual trips)/(# days * typical # of trips)
-                               = (81304 monthly + 9517 flex + 382 staff) / (268 days * 2 trips)
+                               = (81304 monthly + 9517 flex + 382 staff) / (268 days x 2 trips)
                                = 170 unique riders / day
 ```
 ### Breakdown of passholder types:
