@@ -39,7 +39,9 @@ The one blue station is only in the top five for start stations.
 The one red station is only in the top five for end stations.
 
 ### Most Active Stations 
+![startstopwithover5000 1](https://user-images.githubusercontent.com/36459447/48039670-deb0fe80-e143-11e8-848e-fc1279bb7a03.JPG)
 
+The purple circles are stations with over 5000 arrivals and departures. They are the most active stations. I found it interesting that they are clustered closer towards the center of all the stations, while the less popular stations (black circles) are near the outside. I anticipated that the stations closer towards the city center would be more active, before I plotted them, so it was nice to confirm it visually.
 
 
 ### What is the average distance traveled? 
