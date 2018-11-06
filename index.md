@@ -30,16 +30,24 @@ Capital One Code Challenge
 ![endstations](https://user-images.githubusercontent.com/36459447/47974378-5d8c3580-e077-11e8-9794-5d97d1c00695.PNG)
 
 Top 5 Start and Stop Stations on map:
-![startandstopstationssc](https://user-images.githubusercontent.com/36459447/48035794-84a83d00-e133-11e8-9e3f-110c0d8cce42.JPG)<!-- .element height="50%" width="50%" -->
-The 3 green stations are in the top five for both start and stop
-The one blue station is only in the top five for start stations
-The one red station is only in the top five for end stations
+![startandstopstationssc](https://user-images.githubusercontent.com/36459447/48035794-84a83d00-e133-11e8-9e3f-110c0d8cce42.JPG)
+
+The 3 green stations are in the top five for both start and stop.
+
+The one blue station is only in the top five for start stations.
+
+The one red station is only in the top five for end stations.
+
+### Most Active Stations 
+
+
+
 ### What is the average distance traveled? 
 1.18 kilometers
 ### How many riders include bike sharing as a regular part of their commute?
 170 riders
 ```markdown
-unique riders per day estimate = (# monthly pass trips + # flex pass trips + # staff annual trips)/(# days * typical # of trips)
+unique riders per day estimate = (# monthly pass trips + # flex pass trips + # staff annual trips)/(# days x typical # of trips)
                                = (81304 monthly + 9517 flex + 382 staff) / (268 days x 2 trips)
                                = 170 unique riders / day
 ```
@@ -47,8 +55,12 @@ unique riders per day estimate = (# monthly pass trips + # flex pass trips + # s
 
 ![passholdertype](https://user-images.githubusercontent.com/36459447/47974723-e8b9fb00-e078-11e8-9fbd-74b61cf4b7a4.PNG)
 
+### Data exceptions and Anomalies
 
+Stations 3009 and 3039 are outliers in terms of location. They are both near each other, 
+but relatively far away from the other stations. 
 
+Sometimes the latitude and longitude for Station 4108 was 0,0. I decided to ignore this station.
 
 
 
