@@ -57,6 +57,12 @@ unique riders per day estimate = (# monthly pass trips + # flex pass trips + # s
 
 ![passholdertype](https://user-images.githubusercontent.com/36459447/47974723-e8b9fb00-e078-11e8-9fbd-74b61cf4b7a4.PNG)
 
+### Net change of bikes
+One of the challenges with bike sharing is that there is not a perfect balance between the arrival of bikes and departures. This means that if there are more departures than arrivals at a station, there will be a net decrease in the amount of bikes at that station. If the opposite happens, there will be too many bikes at a station and not enough places to lock them. 
+
+Below is a depiction of stations that have a frequent deficit in bikes (green), and stations that had a surplus in bikes (red), over the period that this data was collected.
+
+
 ### Data exceptions and Anomalies
 
 Stations 3009 and 3039 are outliers in terms of location. They are both near each other, 
