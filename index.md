@@ -32,11 +32,11 @@ Capital One Code Challenge
 Top 5 Start and Stop Stations on map:
 ![startandstopstationssc](https://user-images.githubusercontent.com/36459447/48035794-84a83d00-e133-11e8-9e3f-110c0d8cce42.JPG)
 
-The 3 green stations are in the top five for both start and stop.
+Green: In the top five for both start and stop (3 total)
 
-The one blue station is only in the top five for start stations.
+Blue: Top five start station (1 total)
 
-The one red station is only in the top five for end stations.
+Red: Top five end station (1 total)
 
 ### Most Active Stations 
 ![startstopwithover5000 1](https://user-images.githubusercontent.com/36459447/48039670-deb0fe80-e143-11e8-848e-fc1279bb7a03.JPG)
@@ -217,6 +217,39 @@ fprintf('Walk: %d \n', walk);
 fprintf('Staff Annual: %d \n', staff);
 fprintf('Other: %d \n', other);
 
+% done
+```
+Code for calculating the average distance:
+```markdown
+% David J. Gaudet
+% 5 November 2018
+
+clear;
+clc;
+
+startLat = xlsread('metro-bike-share-trip-data.xlsx', 'F2:F132428');
+startLong = xlsread('metro-bike-share-trip-data.xlsx', 'G2:G132428');
+endLat = xlsread('metro-bike-share-trip-data.xlsx', 'I2:I132428');
+endLong = xlsread('metro-bike-share-trip-data.xlsx', 'J2:J132428');
+
+
+dist = 0;
+nonRoundTripCount = 0;
+totalDistance = 0;
+for i=1:132427%132427
+    dX = startLat(i) - endLat(i);
+    dY = startLong(i) - endLong(i);
+    if dX ~= 0 && dY ~= 0 && dX < 100 && dX > -100 && dY < 100 && dY > -100
+        nonRoundTripCount = nonRoundTripCount + 1;
+        distance = sqrt((111*dX)^2 + (92*dY)^2); % yes, I derived the constants 
+                                                 % using a more advanced
+                                                 % method of calculating
+                                                 % distance. 
+        totalDistance = distance + totalDistance;
+    end
+end
+averageDistance = totalDistance / nonRoundTripCount;
+fprintf('Average Distance: %.9f', averageDistance);
 % done
 ```
 
