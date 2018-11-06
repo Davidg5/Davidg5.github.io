@@ -1,6 +1,8 @@
 # Bike Sharing Data
 Data collected and presented by David J. Gaudet
+
 Capital One Code Challenge
+
 5 November 2018
 
 ### Most Common Trips
@@ -12,15 +14,15 @@ Capital One Code Challenge
 |       | Start |     |  End  | Amount of Trips |
 |-------|:-----:|:---:|:-----:|:---------------:|
 |   1   |  3030 | --> |  3014 |             933 |
-| 2 | 3014 | --> | 3030 | 676 |
-| 3 | 3031 | --> | 3005 | 609 |
-| 4 | 3048 |  o  | 3048 | 569 |
-| 5 | 3005 | --> | 3031 | 513 |
-| 6 | 3030 | --> | 3042 | 506 |
-| 7 | 3022 |  o  | 3022 | 450 |
-| 8 | 3069 |  o  | 3069 | 440 |
-| 9 | 3082 |  o  | 3082 | 391 |
-| 10 | 3005 | --> | 3034 | 389 |
+|   2   | 3014  | --> | 3030 | 676 |
+|   3   | 3031  | --> | 3005 | 609 |
+|   4   | 3048  |  o  | 3048 | 569 |
+|   5   | 3005  | --> | 3031 | 513 |
+|   6   | 3030  | --> | 3042 | 506 |
+|   7   | 3022  |  o  | 3022 | 450 |
+|   8   | 3069  |  o  | 3069 | 440 |
+|   9   | 3082  |  o  | 3082 | 391 |
+|   10  | 3005  | --> | 3034 | 389 |
 
 ### Top Start and Stop Stations:
 
@@ -44,6 +46,11 @@ unique riders per day estimate = (# monthly pass trips + # flex pass trips + # s
 ### Breakdown of passholder types:
 
 ![passholdertype](https://user-images.githubusercontent.com/36459447/47974723-e8b9fb00-e078-11e8-9fbd-74b61cf4b7a4.PNG)
+
+
+
+
+
 
 ## Welcome to GitHub Pages
 
