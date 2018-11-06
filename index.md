@@ -66,6 +66,7 @@ Sometimes the latitude and longitude for Station 4108 was 0,0. I decided to igno
 
 
 ## MATLAB Code 
+Code for finding popular stations, trips, and for outputting coordinates:
 ```markdown
 % David J. Gaudet
 % 5 November 2018
@@ -179,6 +180,46 @@ end
 
 % end
 ```
+
+Code for pass type breakdown:
+```markdown
+% David Gaudet
+% 5 November 2018
+
+clear;
+clc;
+
+[~, passType] = xlsread('metro-bike-share-trip-data.xlsx', 'N2:N132428')
+
+monthly = 0;
+flex = 0;
+walk = 0;
+staff = 0;
+other = 0;
+ 
+for i=1:132427
+    if strcmp(passType(i), 'Monthly Pass')
+        monthly = monthly + 1;
+    elseif strcmp(passType(i), 'Flex Pass')
+        flex = flex + 1;
+    elseif strcmp(passType(i), 'Walk-up')
+        walk = walk + 1;
+    elseif strcmp(passType(i), 'Staff Annual')
+        staff = staff + 1;
+    else
+        other = other + 1;
+        fprintf('other index: %d', i);
+    end
+end
+fprintf('Monthly: %d \n', monthly);
+fprintf('Flex: %d \n', flex);
+fprintf('Walk: %d \n', walk);
+fprintf('Staff Annual: %d \n', staff);
+fprintf('Other: %d \n', other);
+
+% done
+```
+
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Davidg5/Davidg5.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
