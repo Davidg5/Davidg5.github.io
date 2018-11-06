@@ -1,4 +1,7 @@
 # Bike Sharing Data
+Data collected and presented by David J. Gaudet
+Capital One Code Challenge
+5 November 2018
 
 ### Most Common Trips
 
@@ -6,14 +9,9 @@
 
 (dashed circle represents a round trip)
 
-
-
-
-
 |       | Start |     |  End  | Amount of Trips |
-|-------|:-----:|:---:|:-----:|-----------------|
+|-------|:-----:|:---:|:-----:|:---------------:|
 |   1   |  3030 | --> |  3014 |             933 |
-
 | 2 | 3014 | --> | 3030 | 676 |
 | 3 | 3031 | --> | 3005 | 609 |
 | 4 | 3048 |  o  | 3048 | 569 |
@@ -23,6 +21,7 @@
 | 8 | 3069 |  o  | 3069 | 440 |
 | 9 | 3082 |  o  | 3082 | 391 |
 | 10 | 3005 | --> | 3034 | 389 |
+
 ### Top Start and Stop Stations:
 
 ![startstations](https://user-images.githubusercontent.com/36459447/47973206-3468a680-e071-11e8-85d4-f548e5fd4825.PNG)
