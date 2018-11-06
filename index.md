@@ -1,6 +1,6 @@
 # Bike Sharing Data
 
-### Top Trips
+### Most Common Trips
 
 ![topstarttostopsc](https://user-images.githubusercontent.com/36459447/48036734-a5729180-e137-11e8-9e57-944ac3b9371a.PNG)
 
@@ -10,9 +10,10 @@
 
 
 
-|       | Start |  | End | Amount of Trips |
-|-------|:---:|:---:|:---:|-------|
-| 1 | 3030 | --> | 3014 | 933 |
+|       | Start |     |  End  | Amount of Trips |
+|-------|:-----:|:---:|:-----:|-----------------|
+|   1   |  3030 | --> |  3014 |             933 |
+
 | 2 | 3014 | --> | 3030 | 676 |
 | 3 | 3031 | --> | 3005 | 609 |
 | 4 | 3048 |  o  | 3048 | 569 |
