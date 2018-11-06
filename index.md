@@ -5,7 +5,11 @@
 
 ![startstations](https://user-images.githubusercontent.com/36459447/47973206-3468a680-e071-11e8-85d4-f548e5fd4825.PNG)
 ![endstations](https://user-images.githubusercontent.com/36459447/47974378-5d8c3580-e077-11e8-9794-5d97d1c00695.PNG)
-
+Top 5 Start and Stop Stations on map:
+![startandstopstationssc](https://user-images.githubusercontent.com/36459447/48035794-84a83d00-e133-11e8-9e3f-110c0d8cce42.JPG)
+The 3 green stations are in the top five for both start and stop
+The one blue station is only in the top five for start stations
+The one red station is only in the top five for end stations
 ### What is the average distance traveled? 
 1.18 kilometers
 ### How many riders include bike sharing as a regular part of their commute?
