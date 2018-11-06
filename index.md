@@ -1,5 +1,5 @@
 # Bike Sharing Data
-Data collected and presented by David J. Gaudet
+Data processed and presented by David J. Gaudet
 
 Capital One Code Challenge
 
