@@ -45,7 +45,7 @@ The purple circles are stations with over 5000 arrivals and departures. They are
 
 
 ### What is the average distance traveled? 
-1.18 kilometers
+1.18 kilometers (round trips not included)
 ### How many riders include bike sharing as a regular part of their commute?
 170 riders
 ```markdown
@@ -66,6 +66,77 @@ Sometimes the latitude and longitude for Station 4108 was 0,0. I decided to igno
 
 
 ## MATLAB Code 
+Code for pass type breakdown:
+```markdown
+% David Gaudet
+% 5 November 2018
+
+clear;
+clc;
+
+[~, passType] = xlsread('metro-bike-share-trip-data.xlsx', 'N2:N132428')
+
+monthly = 0;
+flex = 0;
+walk = 0;
+staff = 0;
+other = 0;
+ 
+for i=1:132427
+    if strcmp(passType(i), 'Monthly Pass')
+        monthly = monthly + 1;
+    elseif strcmp(passType(i), 'Flex Pass')
+        flex = flex + 1;
+    elseif strcmp(passType(i), 'Walk-up')
+        walk = walk + 1;
+    elseif strcmp(passType(i), 'Staff Annual')
+        staff = staff + 1;
+    else
+        other = other + 1;
+        fprintf('other index: %d', i);
+    end
+end
+fprintf('Monthly: %d \n', monthly);
+fprintf('Flex: %d \n', flex);
+fprintf('Walk: %d \n', walk);
+fprintf('Staff Annual: %d \n', staff);
+fprintf('Other: %d \n', other);
+
+% done
+```
+Code for calculating the average distance:
+```markdown
+% David J. Gaudet
+% 5 November 2018
+
+clear;
+clc;
+
+startLat = xlsread('metro-bike-share-trip-data.xlsx', 'F2:F132428');
+startLong = xlsread('metro-bike-share-trip-data.xlsx', 'G2:G132428');
+endLat = xlsread('metro-bike-share-trip-data.xlsx', 'I2:I132428');
+endLong = xlsread('metro-bike-share-trip-data.xlsx', 'J2:J132428');
+
+
+dist = 0;
+nonRoundTripCount = 0;
+totalDistance = 0;
+for i=1:132427%132427
+    dX = startLat(i) - endLat(i);
+    dY = startLong(i) - endLong(i);
+    if dX ~= 0 && dY ~= 0 && dX < 100 && dX > -100 && dY < 100 && dY > -100
+        nonRoundTripCount = nonRoundTripCount + 1;
+        distance = sqrt((111*dX)^2 + (92*dY)^2); % yes, I derived the constants 
+                                                 % using a more advanced
+                                                 % method of calculating
+                                                 % distance. 
+        totalDistance = distance + totalDistance;
+    end
+end
+averageDistance = totalDistance / nonRoundTripCount;
+fprintf('Average Distance: %.9f', averageDistance);
+% done
+```
 Code for finding popular stations, trips, and for outputting coordinates:
 ```markdown
 % David J. Gaudet
@@ -181,77 +252,7 @@ end
 % end
 ```
 
-Code for pass type breakdown:
-```markdown
-% David Gaudet
-% 5 November 2018
 
-clear;
-clc;
-
-[~, passType] = xlsread('metro-bike-share-trip-data.xlsx', 'N2:N132428')
-
-monthly = 0;
-flex = 0;
-walk = 0;
-staff = 0;
-other = 0;
- 
-for i=1:132427
-    if strcmp(passType(i), 'Monthly Pass')
-        monthly = monthly + 1;
-    elseif strcmp(passType(i), 'Flex Pass')
-        flex = flex + 1;
-    elseif strcmp(passType(i), 'Walk-up')
-        walk = walk + 1;
-    elseif strcmp(passType(i), 'Staff Annual')
-        staff = staff + 1;
-    else
-        other = other + 1;
-        fprintf('other index: %d', i);
-    end
-end
-fprintf('Monthly: %d \n', monthly);
-fprintf('Flex: %d \n', flex);
-fprintf('Walk: %d \n', walk);
-fprintf('Staff Annual: %d \n', staff);
-fprintf('Other: %d \n', other);
-
-% done
-```
-Code for calculating the average distance:
-```markdown
-% David J. Gaudet
-% 5 November 2018
-
-clear;
-clc;
-
-startLat = xlsread('metro-bike-share-trip-data.xlsx', 'F2:F132428');
-startLong = xlsread('metro-bike-share-trip-data.xlsx', 'G2:G132428');
-endLat = xlsread('metro-bike-share-trip-data.xlsx', 'I2:I132428');
-endLong = xlsread('metro-bike-share-trip-data.xlsx', 'J2:J132428');
-
-
-dist = 0;
-nonRoundTripCount = 0;
-totalDistance = 0;
-for i=1:132427%132427
-    dX = startLat(i) - endLat(i);
-    dY = startLong(i) - endLong(i);
-    if dX ~= 0 && dY ~= 0 && dX < 100 && dX > -100 && dY < 100 && dY > -100
-        nonRoundTripCount = nonRoundTripCount + 1;
-        distance = sqrt((111*dX)^2 + (92*dY)^2); % yes, I derived the constants 
-                                                 % using a more advanced
-                                                 % method of calculating
-                                                 % distance. 
-        totalDistance = distance + totalDistance;
-    end
-end
-averageDistance = totalDistance / nonRoundTripCount;
-fprintf('Average Distance: %.9f', averageDistance);
-% done
-```
 
 ## Welcome to GitHub Pages
 
