@@ -63,7 +63,120 @@ but relatively far away from the other stations.
 Sometimes the latitude and longitude for Station 4108 was 0,0. I decided to ignore this station.
 
 
+## MATLAB Code 
+```markdown
+% David J. Gaudet
+% 5 November 2018
+clear;
+clc;
 
+% Get start and end station data
+rawStartStations = xlsread('metro-bike-share-trip-data.xlsx', 'E2:E132428'); 
+rawEndStations = xlsread('metro-bike-share-trip-data.xlsx', 'H2:H132428');
+
+startStations = [];
+endStations = [];
+startToEnd = [];
+for i=1:132427%132427
+    thisStartID = rawStartStations(i);
+    thisEndID = rawEndStations(i);
+    % Find data exceptions , just 4108?
+    if (thisStartID < 3000 || thisStartID > 3100)
+        fprintf('bad station ID at: %d \n', i);
+    end
+    if (thisStartID > 3000 && thisStartID < 3100)
+        startStations = [startStations, rawStartStations(i)];
+    end
+    if (thisEndID > 3000 && thisEndID < 3100)
+        endStations = [endStations, rawEndStations(i)];
+    end
+    % Add all start to end combinations to array
+    if (thisStartID > 3000 && thisStartID < 3100 ...
+        && thisEndID > 3000 ...
+        && thisEndID < 3100) 
+        shortStart = thisStartID - 3000;
+        shortEnd = thisEndID - 3000;
+        num = 100*shortStart + shortEnd;
+        startToEnd = [startToEnd, num];
+    end
+end
+
+% Get ordered list of stations without repeats
+uniqueStartIDs = unique(startStations);
+uniqueEndIDs = unique(endStations);
+uniqueStartToEnd = unique(startToEnd);
+
+% Create array with frequency corresponding to array of unique IDs
+startFrequency = hist(startStations, uniqueStartIDs);
+endFrequency = hist(endStations, uniqueEndIDs);
+startToEndFrequency = hist(startToEnd, uniqueStartToEnd);
+
+% display IDs and their frequency next to each other *****
+startFreqMatrix = [uniqueStartIDs(:), startFrequency(:)]
+endFreqMatrix = [uniqueEndIDs(:), endFrequency(:)]
+startToEndFreqMatrix = [uniqueStartToEnd(:), startToEndFrequency(:)];
+
+% Create bar graphs (not used in site)
+bar(uniqueStartIDs, startFrequency)
+bar(uniqueEndIDs, endFrequency)
+bar(uniqueStartToEnd, startToEndFrequency)
+
+% get entry and index of max value in array
+[maxStartFrequency, mostPopStartStationIndex] = max(startFrequency(:)); 
+[maxEndFrequency, mostPopEndStationIndex] = max(endFrequency(:));
+[maxStartToEndFrequency, mostPopStartToEndIndex] = max(startToEndFrequency(:));
+
+% Get station and trips that are most frequent
+mostPopStartStation = uniqueStartIDs(mostPopStartStationIndex);
+mostPopEndStation = uniqueEndIDs(mostPopEndStationIndex);
+mostPopStartToEnd = uniqueStartToEnd(mostPopStartToEndIndex);
+
+fprintf('Most popular start station: %d (frequency = %d) \n', mostPopStartStation, maxStartFrequency);
+fprintf('Most popular end station: %d (frequency = %d) \n', mostPopEndStation, maxEndFrequency);
+
+%%%%%%%%%%%%%%%%%%%
+
+
+startLat = xlsread('metro-bike-share-trip-data.xlsx', 'F2:F132428');
+startLong = xlsread('metro-bike-share-trip-data.xlsx', 'G2:G132428');
+endLat = xlsread('metro-bike-share-trip-data.xlsx', 'I2:I132428');
+endLong = xlsread('metro-bike-share-trip-data.xlsx', 'J2:J132428');
+
+% script to output coordinates in format for plotting website
+startLats = [];
+startLongs = [];
+for i=1:length(uniqueStartIDs)
+    j = 1;
+    while rawStartStations(j) ~= uniqueStartIDs(i)
+        j=j+1;
+    end
+    xCoord = startLat(j);
+    yCoord = startLong(j);
+    if xCoord < 34.026 %exclude the two outlier stations, 3009 and 3039
+        fprintf('station: %d , row: %d \n', rawStartStations(j), j);
+    end
+    
+    startLats = [startLats, xCoord];
+    startLongs = [startLongs, yCoord];
+    if ((uniqueStartIDs(i) == 3030) ...
+        || (uniqueStartIDs(i) == 3014) ...
+        || (uniqueStartIDs(i) == 3031) ...
+        || (uniqueStartIDs(i) == 3005) ...
+        || (uniqueStartIDs(i) == 3048) ...
+        || (uniqueStartIDs(i) == 3042) ...
+        || (uniqueStartIDs(i) == 3022) ...
+        || (uniqueStartIDs(i) == 3069) ...
+        || (uniqueStartIDs(i) == 3082) ...
+        || (uniqueStartIDs(i) == 3034))
+        fprintf('%f, %f, %d, #000000 \n', xCoord, yCoord, uniqueStartIDs(i));
+    else
+        fprintf('%f, %f, %d, #ee6a6a \n', xCoord, yCoord, uniqueStartIDs(i));
+    end
+    
+end
+
+% end
+```
 ## Welcome to GitHub Pages
 
 You can use the [editor on GitHub](https://github.com/Davidg5/Davidg5.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
