@@ -1,5 +1,13 @@
 # Bike Sharing Data
 
+### Top Trips
+
+![topstarttostop](https://user-images.githubusercontent.com/36459447/48036627-3006c100-e137-11e8-9440-ba5681cc5841.JPG)
+
+(dashed circle represents a round trip)
+| Start | End | Frequency |
+|---|---|---|
+| 3030 | 3014 | 933 |
 
 ### Top Start and Stop Stations:
 
